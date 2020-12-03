@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SSM_WebApplication.Models.Distributor>
+    <div class="mx-auto w-75 p-3">
+        <p class="h2" style="margin-bottom: 1em;">Liste des pompes</p>
+        <a class="btn btn-primary" asp-action="Create" role="button" style="margin-bottom: 1em;">Ajouter</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">
+                        Numéro
+                    </th>
+                    <th scope="col">
+                        Pompe
+                    </th>
+                    <th scope="col">
+                        Nom
+                    </th>
+                    <th scope="col">
+                        Description
+                    </th>
+                    <th scope="col">
+                        Carburant
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row">
+                            @Html.DisplayFor(modelItem => item.DistributorId)
+                        </td>
+                        <td scope="row">
+                            @Html.DisplayFor(modelItem => item.Pump.PumpName)
+                        </td>
+                        <td scope="row">
+                            @Html.DisplayFor(modelItem => item.DistributorName)
+                        </td>
+                        <td scope="row">
+                            @Html.DisplayFor(modelItem => item.DistributorDescription)
+                        </td>
+                        <td scope="row">
+                            @Html.DisplayFor(modelItem => item.Fuel.FuelName)
+                        </td>
+                        <td scope="row">
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            <a asp-controller="Distributor" asp-action="Detail" asp-route-idDistributor="@item.DistributorId">Detail</a> |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>

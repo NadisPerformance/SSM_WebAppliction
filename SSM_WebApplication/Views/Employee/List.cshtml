@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SSM_WebApplication.Models.Employee>
+
+<div class="mx-auto w-75 p-3">
+    <p class="h2" style="margin-bottom: 1em;">Liste des employés</p>
+    <a class="btn btn-primary" asp-action="Create" role="button" style="margin-bottom: 1em;">Ajouter</a>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    Numéro
+                </th>
+                <th scope="col">
+                    Nom
+                </th>
+                <th scope="col">
+                    Prénom
+                </th>
+                <th scope="col">
+                    Poste
+                </th>
+                <th scope="col">
+                    Adresse
+                </th>
+                <th scope="col">
+                    Ville
+                </th>
+                <th scope="col">
+                    Téléphone
+                </th>
+                <th scope="col">
+                    Email
+                </th>
+                <th scope="col">
+                    Date d'embauche
+                </th>
+                <th scope="col">
+                    Statut
+                </th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.JobTitle.ShortDescription)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Adresse1)
+                    @Html.DisplayFor(modelItem => item.Adresse2)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Tel1)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.BiringDate)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td scope="row">
+                    <a asp-action="Edit" asp-route-id="#">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="#">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

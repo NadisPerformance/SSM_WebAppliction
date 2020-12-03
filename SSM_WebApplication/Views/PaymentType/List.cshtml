@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SSM_WebApplication.Models.PaymentType>
+
+<div class="mx-auto w-75 p-3">
+    <p class="h2" style="margin-bottom: 1em;">Types de paiment</p>
+    <a class="btn btn-primary" asp-action="Create" role="button" style="margin-bottom: 1em;">Ajouter</a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    Numéro
+                </th>
+                <th scope="col">
+                    Nom
+                </th>
+                <th scope="col">
+                    Description
+                </th>
+                <th scope="col">
+                    Date d'ajout
+                </th>
+                <th scope="col">
+                    Statut
+                </th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.PaymentTypeId)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.PaymentTypeName)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.AddDate)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td scope="row">
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
