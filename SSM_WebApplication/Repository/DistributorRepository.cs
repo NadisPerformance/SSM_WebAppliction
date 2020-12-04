@@ -17,9 +17,8 @@ namespace SSM_WebApplication.Repository
 
         public IEnumerable<Distributor> GetAllDistributors()
         {
-            return _appDbContext.Distributors.Include(f => f.Fuel); 
+            return _appDbContext.Distributors.Include(f =>f.Fuel);
         }
-
         public Distributor GetDistributorById(int id)
         {
             return _appDbContext.Distributors.FirstOrDefault(d => d.DistributorId == id);
