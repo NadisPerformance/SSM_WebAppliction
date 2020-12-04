@@ -1,0 +1,28 @@
+﻿@model SSM_WebApplication.Models.Distributor
+
+<div class="mx-auto w-75 p-3">
+    <h3>Est-vous sure de bien vouloir suprimé : </h3>
+    <div>
+        <h4>Poste</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                Numéro
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DistributorId)
+            </dd>
+            <dt class="col-sm-3">
+                Nom
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DistributorName)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="DistributorId" />
+            <input type="submit" value="Suprimé" class="btn btn-danger" /> |
+            <a asp-action="List">Retour</a>
+        </form>
+    </div>
+</div>

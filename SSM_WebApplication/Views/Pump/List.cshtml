@@ -15,27 +15,33 @@
                 <th scope="col">
                     Description
                 </th>
+                <th scope="col">
+                    Active
+                </th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td scope="row">
-                        @Html.DisplayFor(modelItem => item.PumpId)
-                    </td>
-                    <td scope="row">
-                        @Html.DisplayFor(modelItem => item.PumpName)
-                    </td>
-                    <td scope="row">
-                        @Html.DisplayFor(modelItem => item.PumpDescription)
-                    </td>
-                    <td scope="row">
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
-                </tr>
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.PumpId)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.PumpName)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.PumpDescription)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td scope="row">
+                    <a asp-action="Edit" asp-route-id="@item.PumpId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PumpId">Delete</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

@@ -1,0 +1,46 @@
+﻿@model SSM_WebApplication.Models.Customer
+
+<div class="mx-auto w-75 p-3">
+    <h3>Est-vous sure de bien vouloir suprimé : </h3>
+    <div>
+        <h4>Carburant</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                Numéro
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CustomerId)
+            </dd>
+            <dt class="col-sm-3">
+                Nom
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-3">
+                Prénom
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-3">
+                Company
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company)
+            </dd>
+            <dt class="col-sm-3">
+                ICE
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ICE)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="CustomerId" />
+            <input type="submit" value="Suprimé" class="btn btn-danger" /> |
+            <a asp-action="List">Retour</a>
+        </form>
+    </div>
+</div>

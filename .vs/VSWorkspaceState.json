@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SSM_WebApplication",
+    "\\SSM_WebApplication\\Controllers"
   ],
   "PreviewInSolutionExplorer": false
 }

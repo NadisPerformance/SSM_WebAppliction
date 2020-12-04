@@ -19,7 +19,7 @@
                     Date d'ajout
                 </th>
                 <th scope="col">
-                    Statut
+                    Active
                 </th>
                 <th scope="col"></th>
             </tr>
@@ -44,8 +44,8 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td scope="row">
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
                 </td>
             </tr>
             }

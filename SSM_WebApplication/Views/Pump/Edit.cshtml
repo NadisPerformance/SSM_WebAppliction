@@ -1,0 +1,33 @@
+﻿@model SSM_WebApplication.Models.Pump
+
+<div class="mx-auto w-75 p-3">
+    <h4>Modification de pompe N : @Html.DisplayFor(model => model.PumpId)</h4>
+    <hr />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="PumpId" />
+        <div class="form-group row">
+            <label asp-for="PumpName" class="col-sm-2 col-form-label">Nom</label>
+            <div class="col-sm-10">
+                <input asp-for="PumpName" class="form-control" />
+                <span asp-validation-for="PumpName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="PumpDescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input asp-for="PumpDescription" class="form-control" />
+                <span asp-validation-for="PumpDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Status" />Active
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            <a asp-action="List">Retour</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model SSM_WebApplication.Models.Fuel
+
+<div class="mx-auto w-75 p-3">
+    <h3>Est-vous sure de bien vouloir suprimé : </h3>
+    <div>
+        <h4>Carburant</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                Numéro
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FuelId)
+            </dd>
+            <dt class="col-sm-3">
+                Nom
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FuelName)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="FuelId" />
+            <input type="submit" value="Suprimé" class="btn btn-danger" /> |
+            <a asp-action="List">Retour</a>
+        </form>
+    </div>
+</div>

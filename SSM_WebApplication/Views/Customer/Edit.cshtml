@@ -1,0 +1,96 @@
+﻿@model SSM_WebApplication.Models.Customer
+
+<div class="mx-auto w-75 p-3">
+    <h4>Modification du client N : @Html.DisplayFor(model => model.CustomerId)</h4>
+    <hr />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="CustomerId" />
+        <div class="form-group row">
+            <label asp-for="FirstName" class="col-sm-2 col-form-label">Nom</label>
+            <div class="col-sm-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="LastName" class="col-sm-2 col-form-label">Prénom</label>
+            <div class="col-sm-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Company" class="col-sm-2 col-form-label">Société</label>
+            <div class="col-sm-10">
+                <input asp-for="Company" class="form-control" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ICE" class="col-sm-2 col-form-label">ICE</label>
+            <div class="col-sm-10">
+                <input asp-for="ICE" class="form-control" />
+                <span asp-validation-for="ICE" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Adresse1" class="col-sm-2 col-form-label">Adresse</label>
+            <div class="col-sm-10">
+                <input asp-for="Adresse1" class="form-control" />
+                <span asp-validation-for="Adresse1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Adresse2" class="col-sm-2 col-form-label">Complément d'adresse</label>
+            <div class="col-sm-10">
+                <input asp-for="Adresse2" class="form-control" />
+                <span asp-validation-for="Adresse2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="City" class="col-sm-2 col-form-label">Ville</label>
+            <div class="col-sm-10">
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Tel1" class="col-sm-2 col-form-label">Mobile</label>
+            <div class="col-sm-10">
+                <input asp-for="Tel1" class="form-control" />
+                <span asp-validation-for="Tel1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Tel2" class="col-sm-2 col-form-label">Fix</label>
+            <div class="col-sm-10">
+                <input asp-for="Tel2" class="form-control" />
+                <span asp-validation-for="Tel2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ContactName" class="col-sm-2 col-form-label">Contact</label>
+            <div class="col-sm-10">
+                <input asp-for="ContactName" class="form-control" />
+                <span asp-validation-for="ContactName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Status" />Active
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            <a asp-action="List">Retour</a>
+        </div>
+    </form>
+</div>

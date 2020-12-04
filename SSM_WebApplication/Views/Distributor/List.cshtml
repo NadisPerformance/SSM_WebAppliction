@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<SSM_WebApplication.Models.Distributor>
     <div class="mx-auto w-75 p-3">
-        <p class="h2" style="margin-bottom: 1em;">Liste des pompes</p>
+        <p class="h2" style="margin-bottom: 1em;">Liste des distributeurs</p>
         <a class="btn btn-primary" asp-action="Create" role="button" style="margin-bottom: 1em;">Ajouter</a>
         <table class="table">
             <thead class="thead-dark">
@@ -20,34 +20,39 @@
                     <th scope="col">
                         Carburant
                     </th>
+                    <th scope="col">
+                        Active
+                    </th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td scope="row">
-                            @Html.DisplayFor(modelItem => item.DistributorId)
-                        </td>
-                        <td scope="row">
-                            @Html.DisplayFor(modelItem => item.Pump.PumpId)
-                        </td>
-                        <td scope="row">
-                            @Html.DisplayFor(modelItem => item.DistributorName)
-                        </td>
-                        <td scope="row">
-                            @Html.DisplayFor(modelItem => item.DistributorDescription)
-                        </td>
-                        <td scope="row">
-                            @Html.DisplayFor(modelItem => item.Fuel.FuelName)
-                        </td>
-                        <td scope="row">
-                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                            <a asp-controller="Distributor" asp-action="Detail" asp-route-idDistributor="@item.DistributorId">Detail</a> |
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                        </td>
-                    </tr>
+                <tr>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.DistributorId)
+                    </td>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.Pump.PumpId)
+                    </td>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.DistributorName)
+                    </td>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.DistributorDescription)
+                    </td>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.Fuel.FuelName)
+                    </td>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td scope="row">
+                        <a asp-action="Edit" asp-route-id="@item.DistributorId">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.DistributorId">Delete</a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

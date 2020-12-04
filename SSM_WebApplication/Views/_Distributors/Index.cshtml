@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SSM_WebApplication.Models.Distributor>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DistributorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistributorDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pump)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistributorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistributorDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel.FuelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pump.PumpId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DistributorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DistributorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DistributorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
