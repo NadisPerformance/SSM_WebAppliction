@@ -346,4 +346,3 @@ C:\Users\Nadis PERFORMANCE\Source\Repos\SSM_WebAppliction\SSM_WebApplication\obj
 C:\Users\Nadis PERFORMANCE\Source\Repos\SSM_WebAppliction\SSM_WebApplication\obj\Debug\net5.0\ref\SSM_WebApplication.dll
 C:\Users\Nadis PERFORMANCE\Source\Repos\SSM_WebAppliction\SSM_WebApplication\obj\Debug\net5.0\SSM_WebApplication.pdb
 C:\Users\Nadis PERFORMANCE\Source\Repos\SSM_WebAppliction\SSM_WebApplication\obj\Debug\net5.0\SSM_WebApplication.genruntimeconfig.cache
-C:\Users\Nadis PERFORMANCE\source\repos\SSM_WebAppliction\SSM_WebApplication\obj\Debug\net5.0\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs

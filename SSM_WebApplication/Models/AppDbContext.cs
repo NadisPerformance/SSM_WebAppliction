@@ -99,7 +99,7 @@ namespace SSM_WebApplication.Models
               new Customer { CustomerId = 2, FirstName = "name 2", LastName = " name 2", Company = "company 2", ICE = "ice2", Adresse1 = "adresse 2", Adresse2 = "adresse 2", City = "city 2", Tel1 = "tel 2", Tel2 = "tel 2", Email = "email 2", ContactName = "contact name ", Status = true, AddDate = DateTime.Now }
               );
             modelBuilder.Entity<Customer>().HasData(
-              new Customer { CustomerId = 3, FirstName = "name 1", LastName = " name 1", Company = null, ICE = null, Adresse1 = "adresse 1", Adresse2 = "adresse 2", City = "city 1", Tel1 = "tel 1", Tel2 = "tel 2", Email = "email 1", ContactName = "", Status = true, AddDate = DateTime.Now }
+              new Customer { CustomerId = 3, FirstName = "name 1", LastName = " name 1", Company = "", ICE = "", Adresse1 = "adresse 1", Adresse2 = "adresse 2", City = "city 1", Tel1 = "tel 1", Tel2 = "tel 2", Email = "email 1", ContactName = "", Status = true, AddDate = DateTime.Now }
               );
 
             modelBuilder.Entity<Employee>().HasData(
