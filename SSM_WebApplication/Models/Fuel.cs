@@ -11,6 +11,7 @@ namespace SSM_WebApplication.Models
         [Key]
         public int FuelId { get; set; }
         public string FuelName { get; set; }
+        public float FuelPrice { get; set; }
         public string ShortDescription { get; set; }
         public DateTime AddDate { get; set; }
         public bool Status { get; set; }

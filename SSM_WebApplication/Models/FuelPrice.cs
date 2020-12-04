@@ -12,6 +12,8 @@ namespace SSM_WebApplication.Models
         [Key]
         public int FuelPriceId { get; set; }
         public float Price { get; set; }
+        public string Comment { get; set; }
+        public DateTime AddDate { get; set; }
         [ForeignKey("Fuel")]
         public int FuelId { get; set; }
 

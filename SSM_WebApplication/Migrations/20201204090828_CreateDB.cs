@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SSM_WebApplication.Migrations
 {
-    public partial class init : Migration
+    public partial class CreateDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,6 +39,7 @@ namespace SSM_WebApplication.Migrations
                     FuelId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FuelName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FuelPrice = table.Column<float>(type: "real", nullable: false),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AddDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false)
@@ -87,7 +88,9 @@ namespace SSM_WebApplication.Migrations
                     PumpId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PumpName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PumpDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    PumpDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -101,6 +104,8 @@ namespace SSM_WebApplication.Migrations
                     FuelPriceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Price = table.Column<float>(type: "real", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FuelId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -128,7 +133,7 @@ namespace SSM_WebApplication.Migrations
                     Tel1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    BiringDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HiringDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JobId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -174,12 +179,12 @@ namespace SSM_WebApplication.Migrations
 
             migrationBuilder.InsertData(
                 table: "Fuels",
-                columns: new[] { "FuelId", "AddDate", "FuelName", "ShortDescription", "Status" },
+                columns: new[] { "FuelId", "AddDate", "FuelName", "FuelPrice", "ShortDescription", "Status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Gasoil", "d1", true },
-                    { 2, new DateTime(2020, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Super Sans Plombe", "d2", true },
-                    { 3, new DateTime(2020, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Excellium", "d3", false }
+                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 530, DateTimeKind.Local).AddTicks(7431), "Gasoil", 10f, "d1", true },
+                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1294), "Super Sans Plombe", 20f, "d2", true },
+                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1580), "Excellium", 11f, "d3", false }
                 });
 
             migrationBuilder.InsertData(
@@ -193,19 +198,14 @@ namespace SSM_WebApplication.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "PaymentTypes",
-                columns: new[] { "PaymentTypeId", "AddDate", "PaymentTypeName", "ShortDescription", "Status" },
-                values: new object[] { 1, new DateTime(2020, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "p1", "payment 1", false });
-
-            migrationBuilder.InsertData(
                 table: "Pumps",
-                columns: new[] { "PumpId", "PumpDescription", "PumpName" },
+                columns: new[] { "PumpId", "AddDate", "PumpDescription", "PumpName", "Status" },
                 values: new object[,]
                 {
-                    { 1, "Pompe 1", "P1" },
-                    { 2, "Pompe 2", "P2" },
-                    { 3, "Pompe 3", "P3" },
-                    { 4, "Pompe 4", "P4" }
+                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(5260), "Pompe 1", "P1", true },
+                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7059), "Pompe 2", "P2", true },
+                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7121), "Pompe 3", "P3", true },
+                    { 4, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7161), "Pompe 4", "P4", true }
                 });
 
             migrationBuilder.InsertData(
@@ -221,6 +221,16 @@ namespace SSM_WebApplication.Migrations
                     { 6, new DateTime(2020, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pistolet 6", "d6", 3, 3, false },
                     { 7, new DateTime(2020, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pistolet 7", "d7", 2, 4, false },
                     { 8, new DateTime(2020, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pistolet 8", "d8", 1, 4, false }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FuelPrices",
+                columns: new[] { "FuelPriceId", "AddDate", "Comment", "FuelId", "Price" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 558, DateTimeKind.Local).AddTicks(8500), "Comment 1", 1, 10f },
+                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(768), "Comment 2", 2, 20f },
+                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(884), "Comment 3", 3, 11f }
                 });
 
             migrationBuilder.CreateIndex(

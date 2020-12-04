@@ -10,8 +10,8 @@ using SSM_WebApplication.Models;
 namespace SSM_WebApplication.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201203214403_init")]
-    partial class init
+    [Migration("20201204090828_CreateDB")]
+    partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -201,9 +201,6 @@ namespace SSM_WebApplication.Migrations
                     b.Property<string>("Adresse2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("BiringDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
@@ -212,6 +209,9 @@ namespace SSM_WebApplication.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("HiringDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("JobId")
                         .HasColumnType("int");
@@ -245,6 +245,9 @@ namespace SSM_WebApplication.Migrations
                     b.Property<string>("FuelName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<float>("FuelPrice")
+                        .HasColumnType("real");
+
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -259,24 +262,27 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelId = 1,
-                            AddDate = new DateTime(2020, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 530, DateTimeKind.Local).AddTicks(7431),
                             FuelName = "Gasoil",
+                            FuelPrice = 10f,
                             ShortDescription = "d1",
                             Status = true
                         },
                         new
                         {
                             FuelId = 2,
-                            AddDate = new DateTime(2020, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1294),
                             FuelName = "Super Sans Plombe",
+                            FuelPrice = 20f,
                             ShortDescription = "d2",
                             Status = true
                         },
                         new
                         {
                             FuelId = 3,
-                            AddDate = new DateTime(2020, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1580),
                             FuelName = "Excellium",
+                            FuelPrice = 11f,
                             ShortDescription = "d3",
                             Status = false
                         });
@@ -289,6 +295,12 @@ namespace SSM_WebApplication.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<DateTime>("AddDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("FuelId")
                         .HasColumnType("int");
 
@@ -300,6 +312,32 @@ namespace SSM_WebApplication.Migrations
                     b.HasIndex("FuelId");
 
                     b.ToTable("FuelPrices");
+
+                    b.HasData(
+                        new
+                        {
+                            FuelPriceId = 1,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 558, DateTimeKind.Local).AddTicks(8500),
+                            Comment = "Comment 1",
+                            FuelId = 1,
+                            Price = 10f
+                        },
+                        new
+                        {
+                            FuelPriceId = 2,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(768),
+                            Comment = "Comment 2",
+                            FuelId = 2,
+                            Price = 20f
+                        },
+                        new
+                        {
+                            FuelPriceId = 3,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(884),
+                            Comment = "Comment 3",
+                            FuelId = 3,
+                            Price = 11f
+                        });
                 });
 
             modelBuilder.Entity("SSM_WebApplication.Models.JobTitle", b =>
@@ -374,16 +412,6 @@ namespace SSM_WebApplication.Migrations
                     b.HasKey("PaymentTypeId");
 
                     b.ToTable("PaymentTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            PaymentTypeId = 1,
-                            AddDate = new DateTime(2020, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PaymentTypeName = "p1",
-                            ShortDescription = "payment 1",
-                            Status = false
-                        });
                 });
 
             modelBuilder.Entity("SSM_WebApplication.Models.Pump", b =>
@@ -393,11 +421,17 @@ namespace SSM_WebApplication.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<DateTime>("AddDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("PumpDescription")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PumpName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("PumpId");
 
@@ -407,26 +441,34 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             PumpId = 1,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(5260),
                             PumpDescription = "Pompe 1",
-                            PumpName = "P1"
+                            PumpName = "P1",
+                            Status = true
                         },
                         new
                         {
                             PumpId = 2,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7059),
                             PumpDescription = "Pompe 2",
-                            PumpName = "P2"
+                            PumpName = "P2",
+                            Status = true
                         },
                         new
                         {
                             PumpId = 3,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7121),
                             PumpDescription = "Pompe 3",
-                            PumpName = "P3"
+                            PumpName = "P3",
+                            Status = true
                         },
                         new
                         {
                             PumpId = 4,
+                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7161),
                             PumpDescription = "Pompe 4",
-                            PumpName = "P4"
+                            PumpName = "P4",
+                            Status = true
                         });
                 });
 

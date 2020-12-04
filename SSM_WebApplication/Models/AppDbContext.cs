@@ -25,26 +25,26 @@ namespace SSM_WebApplication.Models
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Fuel>().HasData(
-                new Fuel { FuelId = 1, FuelName = "Gasoil", ShortDescription = "d1", AddDate = Convert.ToDateTime("2020-12-01") ,Status= true }
+                new Fuel { FuelId = 1, FuelName = "Gasoil",FuelPrice=10, ShortDescription = "d1", AddDate = DateTime.Now ,Status= true }
                 ) ;
             _ = modelBuilder.Entity<Fuel>().HasData(
-                new Fuel { FuelId = 2, FuelName = "Super Sans Plombe", ShortDescription = "d2", AddDate = Convert.ToDateTime("2020-11-01"), Status = true }
+                new Fuel { FuelId = 2, FuelName = "Super Sans Plombe", FuelPrice = 20, ShortDescription = "d2", AddDate = DateTime.Now, Status = true }
                 );
             modelBuilder.Entity<Fuel>().HasData(
-                new Fuel { FuelId = 3, FuelName = "Excellium", ShortDescription = "d3", AddDate = Convert.ToDateTime("2020-12-02"), Status = false }
+                new Fuel { FuelId = 3, FuelName = "Excellium", FuelPrice = 11, ShortDescription = "d3", AddDate = DateTime.Now, Status = false }
                 );
 
             modelBuilder.Entity<Pump>().HasData(
-                new Pump { PumpId = 1, PumpName = "P1", PumpDescription = "Pompe 1" }
+                new Pump { PumpId = 1, PumpName = "P1", PumpDescription = "Pompe 1" ,AddDate=DateTime.Now,Status=true}
                 );
             modelBuilder.Entity<Pump>().HasData(
-                new Pump { PumpId = 2, PumpName = "P2", PumpDescription = "Pompe 2" }
+                new Pump { PumpId = 2, PumpName = "P2", PumpDescription = "Pompe 2", AddDate = DateTime.Now, Status = true }
                 );
             modelBuilder.Entity<Pump>().HasData(
-                new Pump { PumpId = 3, PumpName = "P3", PumpDescription = "Pompe 3" }
+                new Pump { PumpId = 3, PumpName = "P3", PumpDescription = "Pompe 3", AddDate = DateTime.Now, Status = true }
                 );
             modelBuilder.Entity<Pump>().HasData(
-                new Pump { PumpId = 4, PumpName = "P4", PumpDescription = "Pompe 4" }
+                new Pump { PumpId = 4, PumpName = "P4", PumpDescription = "Pompe 4", AddDate = DateTime.Now, Status = true }
                 );
 
             modelBuilder.Entity<Distributor>().HasData(
@@ -82,9 +82,32 @@ namespace SSM_WebApplication.Models
                new JobTitle { JobId = 3, JobName = "J3", ShortDescription = "Job 3", AddDate = Convert.ToDateTime("2020 - 02 - 10"), Status = false }
                );
 
-            modelBuilder.Entity<PaymentType>().HasData(
-               new PaymentType { PaymentTypeId = 1, PaymentTypeName = "p1", ShortDescription = "payment 1", AddDate = Convert.ToDateTime("2020 - 10 - 12"), Status = false }
+            modelBuilder.Entity<FuelPrice>().HasData(
+               new FuelPrice { FuelPriceId = 1, Price =10, Comment = "Comment 1", AddDate = DateTime.Now, FuelId=1 }
                );
+            modelBuilder.Entity<FuelPrice>().HasData(
+             new FuelPrice { FuelPriceId = 2, Price = 20, Comment = "Comment 2", AddDate = DateTime.Now, FuelId = 2 }
+             );
+            modelBuilder.Entity<FuelPrice>().HasData(
+             new FuelPrice { FuelPriceId = 3, Price = 11, Comment = "Comment 3", AddDate = DateTime.Now, FuelId = 3}
+             );
+
+            modelBuilder.Entity<Customer>().HasData(
+               new Customer { CustomerId = 1, FirstName = "name 1", LastName = " name 1", Company ="company 1",ICE="ice1",Adresse1="adresse 1",Adresse2="adresse 2",City="city 1",Tel1="tel 1",Tel2="tel 2",Email="email 1",ContactName="contact name 1",Status=true,AddDate= DateTime.Now}
+               );
+            modelBuilder.Entity<Customer>().HasData(
+              new Customer { CustomerId = 2, FirstName = "name 2", LastName = " name 2", Company = "company 2", ICE = "ice2", Adresse1 = "adresse 2", Adresse2 = "adresse 2", City = "city 2", Tel1 = "tel 2", Tel2 = "tel 2", Email = "email 2", ContactName = "contact name ", Status = true, AddDate = DateTime.Now }
+              );
+            modelBuilder.Entity<Customer>().HasData(
+              new Customer { CustomerId = 3, FirstName = "name 1", LastName = " name 1", Company = "", ICE = "", Adresse1 = "adresse 1", Adresse2 = "adresse 2", City = "city 1", Tel1 = "tel 1", Tel2 = "tel 2", Email = "email 1", ContactName = "", Status = true, AddDate = DateTime.Now }
+              );
+
+            modelBuilder.Entity<Employee>().HasData(
+              new Employee { EmployeeId = 1, FirstName = "name 1", LastName = " name 1",  Adresse1 = "adresse 1", Adresse2 = "adresse 2", City = "city 1", Tel1 = "tel 1", Email = "email 1", Status = true, HiringDate = DateTime.Now ,JobId=1 }
+              );
+            modelBuilder.Entity<Employee>().HasData(
+             new Employee { EmployeeId = 2, FirstName = "name 2", LastName = " name 2", Adresse1 = "adresse 2", Adresse2 = "adresse 2", City = "city 1", Tel1 = "tel 1", Email = "email 1", Status = true, HiringDate = DateTime.Now, JobId=2 }
+             );
         }
     }
 }

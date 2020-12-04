@@ -19,7 +19,7 @@ namespace SSM_WebApplication.Models
         public string Tel1 { get; set; }
         public string Email { get; set; }
         public bool Status { get; set; }
-        public DateTime BiringDate { get; set; }
+        public DateTime HiringDate { get; set; }
         [ForeignKey("JobTitle")]
         public int JobId { get; set; }
         public JobTitle JobTitle { get; set; }

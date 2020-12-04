@@ -170,3 +170,5 @@ C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5
 C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5.0\Razor\Views\Employee\List.cshtml.g.cs
 C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5.0\Razor\Views\JobTitle\List.cshtml.g.cs
 C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5.0\Razor\Views\PaymentType\List.cshtml.g.cs
+C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5.0\Razor\Views\FuelPrice\Detail.cshtml.g.cs
+C:\Users\AYOUB\source\repos\SSM_WebApplication\SSM_WebApplication\obj\Debug\net5.0\Razor\Views\FuelPrice\List.cshtml.g.cs

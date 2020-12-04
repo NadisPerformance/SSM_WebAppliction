@@ -12,6 +12,8 @@ namespace SSM_WebApplication.Models
         public int PumpId { get; set; }
         public string PumpName { get; set; }
         public string PumpDescription { get; set; }
+        public DateTime AddDate { get; set; }
+        public bool Status { get; set; }
         public List<Distributor> Distributors { get; set;}
 }
 }
