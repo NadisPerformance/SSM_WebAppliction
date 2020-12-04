@@ -68,6 +68,59 @@ namespace SSM_WebApplication.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 1,
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(8741),
+                            Adresse1 = "adresse 1",
+                            Adresse2 = "adresse 2",
+                            City = "city 1",
+                            Company = "company 1",
+                            ContactName = "contact name 1",
+                            Email = "email 1",
+                            FirstName = "name 1",
+                            ICE = "ice1",
+                            LastName = " name 1",
+                            Status = true,
+                            Tel1 = "tel 1",
+                            Tel2 = "tel 2"
+                        },
+                        new
+                        {
+                            CustomerId = 2,
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(9689),
+                            Adresse1 = "adresse 2",
+                            Adresse2 = "adresse 2",
+                            City = "city 2",
+                            Company = "company 2",
+                            ContactName = "contact name ",
+                            Email = "email 2",
+                            FirstName = "name 2",
+                            ICE = "ice2",
+                            LastName = " name 2",
+                            Status = true,
+                            Tel1 = "tel 2",
+                            Tel2 = "tel 2"
+                        },
+                        new
+                        {
+                            CustomerId = 3,
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(9753),
+                            Adresse1 = "adresse 1",
+                            Adresse2 = "adresse 2",
+                            City = "city 1",
+                            Company = "",
+                            ContactName = "",
+                            Email = "email 1",
+                            FirstName = "name 1",
+                            ICE = "",
+                            LastName = " name 1",
+                            Status = true,
+                            Tel1 = "tel 1",
+                            Tel2 = "tel 2"
+                        });
                 });
 
             modelBuilder.Entity("SSM_WebApplication.Models.Distributor", b =>
@@ -228,6 +281,36 @@ namespace SSM_WebApplication.Migrations
                     b.HasIndex("JobId");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            EmployeeId = 1,
+                            Adresse1 = "adresse 1",
+                            Adresse2 = "adresse 2",
+                            City = "city 1",
+                            Email = "email 1",
+                            FirstName = "name 1",
+                            HiringDate = new DateTime(2020, 12, 4, 12, 2, 31, 37, DateTimeKind.Local).AddTicks(5981),
+                            JobId = 1,
+                            LastName = " name 1",
+                            Status = true,
+                            Tel1 = "tel 1"
+                        },
+                        new
+                        {
+                            EmployeeId = 2,
+                            Adresse1 = "adresse 2",
+                            Adresse2 = "adresse 2",
+                            City = "city 1",
+                            Email = "email 1",
+                            FirstName = "name 2",
+                            HiringDate = new DateTime(2020, 12, 4, 12, 2, 31, 37, DateTimeKind.Local).AddTicks(7580),
+                            JobId = 2,
+                            LastName = " name 2",
+                            Status = true,
+                            Tel1 = "tel 1"
+                        });
                 });
 
             modelBuilder.Entity("SSM_WebApplication.Models.Fuel", b =>
@@ -260,7 +343,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelId = 1,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 530, DateTimeKind.Local).AddTicks(7431),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 25, DateTimeKind.Local).AddTicks(1935),
                             FuelName = "Gasoil",
                             FuelPrice = 10f,
                             ShortDescription = "d1",
@@ -269,7 +352,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelId = 2,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1294),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(1927),
                             FuelName = "Super Sans Plombe",
                             FuelPrice = 20f,
                             ShortDescription = "d2",
@@ -278,7 +361,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelId = 3,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1580),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(2201),
                             FuelName = "Excellium",
                             FuelPrice = 11f,
                             ShortDescription = "d3",
@@ -315,7 +398,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelPriceId = 1,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 558, DateTimeKind.Local).AddTicks(8500),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 35, DateTimeKind.Local).AddTicks(9046),
                             Comment = "Comment 1",
                             FuelId = 1,
                             Price = 10f
@@ -323,7 +406,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelPriceId = 2,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(768),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(485),
                             Comment = "Comment 2",
                             FuelId = 2,
                             Price = 20f
@@ -331,7 +414,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             FuelPriceId = 3,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(884),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(551),
                             Comment = "Comment 3",
                             FuelId = 3,
                             Price = 11f
@@ -439,7 +522,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             PumpId = 1,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(5260),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(5014),
                             PumpDescription = "Pompe 1",
                             PumpName = "P1",
                             Status = true
@@ -447,7 +530,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             PumpId = 2,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7059),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6498),
                             PumpDescription = "Pompe 2",
                             PumpName = "P2",
                             Status = true
@@ -455,7 +538,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             PumpId = 3,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7121),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6559),
                             PumpDescription = "Pompe 3",
                             PumpName = "P3",
                             Status = true
@@ -463,7 +546,7 @@ namespace SSM_WebApplication.Migrations
                         new
                         {
                             PumpId = 4,
-                            AddDate = new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7161),
+                            AddDate = new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6608),
                             PumpDescription = "Pompe 4",
                             PumpName = "P4",
                             Status = true

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SSM_WebApplication.Migrations
 {
-    public partial class CreateDB : Migration
+    public partial class createDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -178,13 +178,23 @@ namespace SSM_WebApplication.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "CustomerId", "AddDate", "Adresse1", "Adresse2", "City", "Company", "ContactName", "Email", "FirstName", "ICE", "LastName", "Status", "Tel1", "Tel2" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(8741), "adresse 1", "adresse 2", "city 1", "company 1", "contact name 1", "email 1", "name 1", "ice1", " name 1", true, "tel 1", "tel 2" },
+                    { 2, new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(9689), "adresse 2", "adresse 2", "city 2", "company 2", "contact name ", "email 2", "name 2", "ice2", " name 2", true, "tel 2", "tel 2" },
+                    { 3, new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(9753), "adresse 1", "adresse 2", "city 1", "", "", "email 1", "name 1", "", " name 1", true, "tel 1", "tel 2" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Fuels",
                 columns: new[] { "FuelId", "AddDate", "FuelName", "FuelPrice", "ShortDescription", "Status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 530, DateTimeKind.Local).AddTicks(7431), "Gasoil", 10f, "d1", true },
-                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1294), "Super Sans Plombe", 20f, "d2", true },
-                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(1580), "Excellium", 11f, "d3", false }
+                    { 1, new DateTime(2020, 12, 4, 12, 2, 31, 25, DateTimeKind.Local).AddTicks(1935), "Gasoil", 10f, "d1", true },
+                    { 2, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(1927), "Super Sans Plombe", 20f, "d2", true },
+                    { 3, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(2201), "Excellium", 11f, "d3", false }
                 });
 
             migrationBuilder.InsertData(
@@ -202,10 +212,10 @@ namespace SSM_WebApplication.Migrations
                 columns: new[] { "PumpId", "AddDate", "PumpDescription", "PumpName", "Status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(5260), "Pompe 1", "P1", true },
-                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7059), "Pompe 2", "P2", true },
-                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7121), "Pompe 3", "P3", true },
-                    { 4, new DateTime(2020, 12, 4, 10, 8, 22, 539, DateTimeKind.Local).AddTicks(7161), "Pompe 4", "P4", true }
+                    { 1, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(5014), "Pompe 1", "P1", true },
+                    { 2, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6498), "Pompe 2", "P2", true },
+                    { 3, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6559), "Pompe 3", "P3", true },
+                    { 4, new DateTime(2020, 12, 4, 12, 2, 31, 32, DateTimeKind.Local).AddTicks(6608), "Pompe 4", "P4", true }
                 });
 
             migrationBuilder.InsertData(
@@ -224,13 +234,22 @@ namespace SSM_WebApplication.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "Adresse1", "Adresse2", "City", "Email", "FirstName", "HiringDate", "JobId", "LastName", "Status", "Tel1" },
+                values: new object[,]
+                {
+                    { 1, "adresse 1", "adresse 2", "city 1", "email 1", "name 1", new DateTime(2020, 12, 4, 12, 2, 31, 37, DateTimeKind.Local).AddTicks(5981), 1, " name 1", true, "tel 1" },
+                    { 2, "adresse 2", "adresse 2", "city 1", "email 1", "name 2", new DateTime(2020, 12, 4, 12, 2, 31, 37, DateTimeKind.Local).AddTicks(7580), 2, " name 2", true, "tel 1" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "FuelPrices",
                 columns: new[] { "FuelPriceId", "AddDate", "Comment", "FuelId", "Price" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 12, 4, 10, 8, 22, 558, DateTimeKind.Local).AddTicks(8500), "Comment 1", 1, 10f },
-                    { 2, new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(768), "Comment 2", 2, 20f },
-                    { 3, new DateTime(2020, 12, 4, 10, 8, 22, 559, DateTimeKind.Local).AddTicks(884), "Comment 3", 3, 11f }
+                    { 1, new DateTime(2020, 12, 4, 12, 2, 31, 35, DateTimeKind.Local).AddTicks(9046), "Comment 1", 1, 10f },
+                    { 2, new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(485), "Comment 2", 2, 20f },
+                    { 3, new DateTime(2020, 12, 4, 12, 2, 31, 36, DateTimeKind.Local).AddTicks(551), "Comment 3", 3, 11f }
                 });
 
             migrationBuilder.CreateIndex(

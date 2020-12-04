@@ -7459,25 +7459,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AYOUB\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Nadis PERFORMANCE\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AYOUB\\source\\repos\\SSM_WebApplication\\SSM_WebApplication\\SSM_WebApplication.csproj",
+      "projectUniqueName": "C:\\Users\\Nadis PERFORMANCE\\Source\\Repos\\SSM_WebAppliction\\SSM_WebApplication\\SSM_WebApplication.csproj",
       "projectName": "SSM_WebApplication",
-      "projectPath": "C:\\Users\\AYOUB\\source\\repos\\SSM_WebApplication\\SSM_WebApplication\\SSM_WebApplication.csproj",
-      "packagesPath": "C:\\Users\\AYOUB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AYOUB\\source\\repos\\SSM_WebApplication\\SSM_WebApplication\\obj\\",
+      "projectPath": "C:\\Users\\Nadis PERFORMANCE\\Source\\Repos\\SSM_WebAppliction\\SSM_WebApplication\\SSM_WebApplication.csproj",
+      "packagesPath": "C:\\Users\\Nadis PERFORMANCE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nadis PERFORMANCE\\Source\\Repos\\SSM_WebAppliction\\SSM_WebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\AYOUB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nadis PERFORMANCE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
